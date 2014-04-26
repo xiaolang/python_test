@@ -1,4 +1,7 @@
 #!/usr/bin/env python
 
-raw_input('name:')
+name = raw_input('name:')
+
+print 'hi',name
+
 
