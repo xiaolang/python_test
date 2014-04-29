@@ -2,11 +2,6 @@
 
 #wolf test
 
-test = "test.txt"
-
-f = file(test)
-c = f.readlines()
-
 while True:
   user = raw_input("\033[32;1minput user:\033[0m")
   if user == "wolf" :
@@ -18,13 +13,18 @@ while True:
       print "\033[31;1mOK!~~~~~~~~~~~~~~~~~~~~~~~~~\033[0m"
 
       while True:
-        user_input = raw_input("\033[32;1muser:\033[0m").strip()
-        if len(user_input) == 0 :print "empty input!";continue
-        for line in c:
-          if user_input in line:
-		print line
-		break
-        else:
-        	print "\033[31;1mmuyou!\033[0m"
+         chadao = 0 
+         user_input = raw_input("\033[32;1muser:\033[0m").strip()
+         f = file("test.txt")        
+         while True:
+           c = f.readline()
+           if len(user_input) == 0 :print "empty input!";break
+           if len(c) == 0 : break
+           if user_input in c:
+                print "\033[31;1m%s\033[0m" %c        
+	        chadao = 1
+           else:           
+                pass           
+         if chadao == 0 :print "\033[31;1mmuyou!%s\033[0m" %user_input
 
 
